@@ -43,6 +43,7 @@
     <Compile Include="AsyncException.cs" />
     <Compile Include="AsyncConfigureAwait.cs" />
     <Compile Include="AsyncIProgress.cs" />
+    <Compile Include="AsyncWhenAll.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

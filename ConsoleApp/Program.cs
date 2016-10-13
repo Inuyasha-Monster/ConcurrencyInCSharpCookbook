@@ -22,8 +22,22 @@ namespace ConsoleApp
             //ConfigureAwaitTestAsync().Wait();
 
             // 测试进度报告
-            AsyncIProgress.CallMyProgessAsync().Wait();
+            //AsyncIProgress.CallMyProgessAsync().Wait();
 
+            // 测试WhenAll
+            //System.Diagnostics.Stopwatch sw = new System.Diagnostics.Stopwatch();
+            //sw.Start();
+            //AsyncWhenAll.TestWhenAllAsync().Wait();
+            //sw.Stop();
+            //Console.WriteLine(sw.Elapsed.TotalSeconds + " s");
+
+            //AsyncWhenAll.TestWhenAllResultIntArrayAsync().Result.ToList().ForEach(x => Console.WriteLine(x));
+            AsyncWhenAll.DownloadAllUrlsHtmlAsync(new List<string>()
+            {
+                "http://www.baidu.com",
+                "http://www.google.com"
+            }).Result.ToList().ForEach(x => Console.WriteLine(x));
+            Console.WriteLine("ok");
             Console.ReadKey();
         }
 
