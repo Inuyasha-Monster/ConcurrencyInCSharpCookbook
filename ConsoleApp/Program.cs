@@ -12,12 +12,18 @@ namespace ConsoleApp
     {
         static void Main(string[] args)
         {
+            // 测试异步异常
             //ShowThreadId();
             //AsyncException.TryTestExceptionAsync().Wait();
             //ShowThreadId();
 
-            Console.WriteLine("---------测试Async捕获上下文机制-----------");
-            ConfigureAwaitTestAsync().Wait();
+            // 测试Async上下文捕获机制
+            //Console.WriteLine("---------测试Async捕获上下文机制-----------");
+            //ConfigureAwaitTestAsync().Wait();
+
+            // 测试进度报告
+            AsyncIProgress.CallMyProgessAsync().Wait();
+
             Console.ReadKey();
         }
 
