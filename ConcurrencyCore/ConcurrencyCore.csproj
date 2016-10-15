@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AsyncCancellationToken.cs" />
     <Compile Include="AsyncException.cs" />
     <Compile Include="AsyncConfigureAwait.cs" />
     <Compile Include="AsyncIProgress.cs" />

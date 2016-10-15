@@ -33,14 +33,17 @@ namespace ConsoleApp
             //Console.WriteLine(sw.Elapsed.TotalSeconds + " s");
 
             //AsyncWhenAll.TestWhenAllResultIntArrayAsync().Result.ToList().ForEach(x => Console.WriteLine(x));
-            AsyncWhenAll.DownloadAllUrlsHtmlAsync(new List<string>()
-            {
-                "http://www.baidu.com",
-                "http://www.google.com"
-            }).Result.ToList().ForEach(x => Console.WriteLine(x));
+            //AsyncWhenAll.DownloadAllUrlsHtmlAsync(new List<string>()
+            //{
+            //    "http://www.baidu.com",
+            //    "http://www.google.com"
+            //}).Result.ToList().ForEach(x => Console.WriteLine(x));
+
+            AsyncException.TestThrowExceptionAsync().Wait();
+
+            //AsyncCancellationToken.IssueCancellRequest().Wait();
+
             Console.WriteLine("ok");
-
-
 
             Console.ReadKey();
         }
@@ -100,7 +103,7 @@ namespace ConsoleApp
         /// <param name="matrices"></param>
         /// <param name="drgess"></param>
         /// <returns></returns>
-        int InvertMatrices(IEnumerable<Matrix> matrices,float drgess)
+        int InvertMatrices(IEnumerable<Matrix> matrices, float drgess)
         {
             object objLocked = new object();
             int invertMatricesNumber = 0;

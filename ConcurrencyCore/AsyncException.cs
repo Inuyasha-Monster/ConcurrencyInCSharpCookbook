@@ -27,5 +27,32 @@ namespace ConcurrencyCore
                 Console.WriteLine(ex.Message);
             }
         }
+
+        static async Task ThrowExceptionAsync()
+        {
+            await Task.Delay(TimeSpan.FromSeconds(1));
+            throw new InvalidOperationException("Test");
+        }
+
+        public static async Task TestThrowExceptionAsync()
+        {
+            var task = ThrowExceptionAsync2();
+            try
+            {
+                await task;
+            }
+            catch (InvalidOperationException ex)
+            {
+                Console.WriteLine(ex.Message);
+            }
+        }
+
+        private static Task ThrowExceptionAsync2()
+        {
+            return Task.Run(() =>
+            {
+                throw new InvalidOperationException("Test2");
+            });
+        }
     }
 }
